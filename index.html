@@ -1,46 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Web Daily Planner</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+<title>Daily Planner</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <img src="" alt="">
-            <p>NAMA USER</p>
-            <p>DAILY PLANNER APPS</p>
-            <div class="setting"></div>
-            <div class="log-out"></div>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <div class="sec-left">
-                <div class="three-priorities">
-                    <p>TOP 3 PRIORITIES</p>
-                </div>
-                <div class="to-do-list">
-                    <p>TO DO LIST</p>
-                </div>
-            </div>
-            <div class="sec-right">
-                <div class="google-calendar">
+<div class="app">
+<header>
+<div class="brand">
+    <div class="mark">R</div>
+    <div class="brand-text">
+    <div class="kicker">Daily Planner</div>
+    <div class="title">Iqbal</div>
+    </div>
+</div>
+<div class="today-pill" id="headerDate">—</div>
+</header>
 
-                </div>
-                <div class="col-message">
-                    <div class="for-tommorow">
-                        <p>FOR TOMMOROW :</p>
-                    </div>
-                    <div class="notes">
-                        <p>NOTES :</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <script src="index.js"></script>
+<main>
+<div class="grid">
+    <div class="left-col">
+    <div class="card task-card">
+        <h2>Top 3 Priorities</h2>
+        <ul class="task-list" id="prioritiesList"></ul>
+        <div class="add-row">
+        <input id="priorityInput" maxlength="80" placeholder="Tambah prioritas...">
+        <button id="priorityAdd">+</button>
+        </div>
+    </div>
+
+    <div class="card task-card" style="min-height:340px;">
+        <h2>To Do List</h2>
+        <ul class="task-list" id="todosList"></ul>
+        <div class="add-row">
+        <input id="todoInput" maxlength="120" placeholder="Tambah tugas baru...">
+        <button id="todoAdd">+</button>
+        </div>
+    </div>
+    </div>
+
+    <div class="right-col">
+    <div class="card gray-card">
+        <h3>Google Calendar — Jadwal Harian</h3>
+        <div class="cal-head">
+        <div class="cal-nav">
+            <button id="prevDay">‹</button>
+            <span class="cal-date" id="calDateLabel"></span>
+            <button id="nextDay">›</button>
+        </div>
+        <button class="cal-today-btn" id="jumpToday">Hari ini</button>
+        </div>
+
+        <div class="cal-setup">
+        Masukkan <b>Calendar ID</b> Google Calendar-mu (contoh: <code>namamu@gmail.com</code> atau ID kalender publik) untuk menampilkan jadwal. Kalender harus berstatus publik / dibagikan.
+        <input id="calendarIdInput" placeholder="mis. budi@gmail.com">
+        </div>
+
+        <div id="calFrameArea"></div>
+    </div>
+
+    <div class="bottom-row">
+        <div class="card gray-card">
+        <h3>For Tomorrow</h3>
+        <textarea id="tomorrowNote" placeholder="Catatan tugas untuk besok..."></textarea>
+        <div class="save-hint" id="tomorrowSaveHint"></div>
+        </div>
+        <div class="card gray-card">
+        <h3>Notes</h3>
+        <textarea id="notesText" placeholder="Hal-hal yang perlu diperbaiki hari ini..."></textarea>
+        <div class="save-hint" id="notesSaveHint"></div>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="footer-note">Data tersimpan otomatis di perangkatmu. Tugas yang belum dicentang akan terbawa ke hari berikutnya.</div>
+</main>
+</div>
+
+<script src="index.js">
+</script>
 </body>
 </html>
